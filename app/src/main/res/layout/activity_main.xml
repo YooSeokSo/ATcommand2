@@ -1,0 +1,126 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+
+<EditText
+    android:id="@+id/atcommand"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:ems="10"
+    android:imeOptions="actionGo"
+    android:inputType="text"
+    android:minHeight="48dp"
+    android:text="AT"
+    app:layout_constraintEnd_toEndOf="@+id/port"
+    app:layout_constraintStart_toStartOf="@+id/port"
+    app:layout_constraintTop_toBottomOf="@+id/port" />
+
+<Button
+    android:id="@+id/send_btn"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Send"
+    app:layout_constraintBottom_toBottomOf="@+id/atcommand"
+    app:layout_constraintEnd_toEndOf="@+id/connect_btn"
+    app:layout_constraintStart_toStartOf="@+id/connect_btn"
+    app:layout_constraintTop_toTopOf="@+id/atcommand"
+    app:layout_constraintVertical_bias="0.0" />
+
+<Button
+    android:id="@+id/connect_btn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Connect"
+    app:layout_constraintBottom_toTopOf="@+id/atcommand"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/port"
+    app:layout_constraintTop_toTopOf="@+id/port" />
+
+<TextView
+    android:id="@+id/connect_tv"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:text="No Connect"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/disconnect_btn"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/disconnect_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disconnect"
+        app:layout_constraintBottom_toBottomOf="@+id/connect_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/connect_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<ScrollView
+    android:id="@+id/response"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/clear_btn">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/response_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>
+
+    <Button
+    android:id="@+id/clear_btn"
+    android:layout_width="198dp"
+    android:layout_height="wrap_content"
+    android:text="clear"
+    app:layout_constraintBottom_toTopOf="@+id/response"
+    app:layout_constraintEnd_toStartOf="@+id/save_btn"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/atcommand" />
+
+<Button
+    android:id="@+id/save_btn"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="save"
+    app:layout_constraintBottom_toBottomOf="@+id/clear_btn"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/clear_btn"
+    app:layout_constraintTop_toTopOf="@+id/clear_btn" />
+
+<EditText
+    android:id="@+id/port"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:ems="10"
+    android:imeOptions="actionGo"
+    android:inputType="text"
+    android:minHeight="48dp"
+    android:text="/dev/smd11"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/connect_btn"
+    app:layout_constraintHorizontal_bias="0.46"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.18" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
